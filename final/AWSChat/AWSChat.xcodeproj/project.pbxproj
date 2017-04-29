@@ -30,6 +30,9 @@
 		91393AFC1EB3124900FF16AC /* SNSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91393AFB1EB3124900FF16AC /* SNSController.swift */; };
 		91393AFE1EB3130300FF16AC /* AWSSNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91393AFD1EB3130300FF16AC /* AWSSNS.framework */; };
 		91393AFF1EB3130300FF16AC /* AWSSNS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 91393AFD1EB3130300FF16AC /* AWSSNS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9189E5801EB390F40025684A /* AWSMobileAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9189E57F1EB390F40025684A /* AWSMobileAnalytics.framework */; };
+		9189E5811EB390F40025684A /* AWSMobileAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9189E57F1EB390F40025684A /* AWSMobileAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9189E5831EB3913A0025684A /* AnalyticsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9189E5821EB3913A0025684A /* AnalyticsController.swift */; };
 		91B2DA311E8A3C2500FCFD3A /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B2DA2C1E8A3C2500FCFD3A /* GoogleAppUtilities.framework */; };
 		91B2DA321E8A3C2500FCFD3A /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 91B2DA2D1E8A3C2500FCFD3A /* GoogleSignIn.bundle */; };
 		91B2DA331E8A3C2500FCFD3A /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91B2DA2E1E8A3C2500FCFD3A /* GoogleSignIn.framework */; };
@@ -67,6 +70,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9189E5811EB390F40025684A /* AWSMobileAnalytics.framework in Embed Frameworks */,
 				9122B04F1E6F43130024AE10 /* AWSCognito.framework in Embed Frameworks */,
 				91393AFF1EB3130300FF16AC /* AWSSNS.framework in Embed Frameworks */,
 				9122B0511E6F43130024AE10 /* AWSCognitoIdentityProvider.framework in Embed Frameworks */,
@@ -103,6 +107,8 @@
 		91393AFD1EB3130300FF16AC /* AWSSNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSSNS.framework; path = Carthage/Build/iOS/AWSSNS.framework; sourceTree = "<group>"; };
 		91393B001EB3151F00FF16AC /* AWSChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AWSChat.entitlements; sourceTree = "<group>"; };
 		9140BCF31E825DF200AD650A /* ObjCBridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjCBridging-Header.h"; sourceTree = "<group>"; };
+		9189E57F1EB390F40025684A /* AWSMobileAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AWSMobileAnalytics.framework; path = Carthage/Build/iOS/AWSMobileAnalytics.framework; sourceTree = "<group>"; };
+		9189E5821EB3913A0025684A /* AnalyticsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsController.swift; sourceTree = "<group>"; };
 		91B2DA2C1E8A3C2500FCFD3A /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppUtilities.framework; path = google_signin_sdk_4_0_1/GoogleAppUtilities.framework; sourceTree = "<group>"; };
 		91B2DA2D1E8A3C2500FCFD3A /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = google_signin_sdk_4_0_1/GoogleSignIn.bundle; sourceTree = "<group>"; };
 		91B2DA2E1E8A3C2500FCFD3A /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = google_signin_sdk_4_0_1/GoogleSignIn.framework; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 				91393AFE1EB3130300FF16AC /* AWSSNS.framework in Frameworks */,
 				91D569801E9F918F0046E158 /* AWSS3.framework in Frameworks */,
 				91B2DA341E8A3C2500FCFD3A /* GoogleSignInDependencies.framework in Frameworks */,
+				9189E5801EB390F40025684A /* AWSMobileAnalytics.framework in Frameworks */,
 				9135A4E61E81AE9500374DAE /* Bolts.framework in Frameworks */,
 				91B2DA331E8A3C2500FCFD3A /* GoogleSignIn.framework in Frameworks */,
 			);
@@ -162,6 +169,7 @@
 		9122B0231E6E98070024AE10 = {
 			isa = PBXGroup;
 			children = (
+				9189E57F1EB390F40025684A /* AWSMobileAnalytics.framework */,
 				91393AFD1EB3130300FF16AC /* AWSSNS.framework */,
 				91D5697F1E9F918F0046E158 /* AWSS3.framework */,
 				91D593701E9A8F940094160B /* AWSDynamoDB.framework */,
@@ -232,6 +240,7 @@
 				91D5936E1E9A7A1E0094160B /* ChatManager.swift */,
 				91004C0F1EA354E6000772E7 /* S3Controller.swift */,
 				91393AFB1EB3124900FF16AC /* SNSController.swift */,
+				9189E5821EB3913A0025684A /* AnalyticsController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -394,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9189E5831EB3913A0025684A /* AnalyticsController.swift in Sources */,
 				9122B0441E6E98470024AE10 /* SignupViewController.swift in Sources */,
 				91C5D4381E8465FD00DAFD11 /* SocialIdentityManager.swift in Sources */,
 				91D569831E9F92F20046E158 /* ChatViewController.swift in Sources */,
