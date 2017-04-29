@@ -7,16 +7,30 @@
 //
 
 import Foundation
+import AWSCore
 import AWSMobileAnalytics
 
 class AnalyticsController {
     
-    private let appID = "arn:aws:sns:us-east-1:700128248927:app/APNS_SANDBOX/AWSChat_iOS"
+    private let identityPoolRegion: AWSRegionType = .USEast1
+
+    private let identityPoolD = "us-east-1:74034201-e8f6-454e-a7e0-52b428bff06b"
+    private let appID = "994e34638d084c04860b5976da50b5c4"
     private var analytics: AWSMobileAnalytics?
     
     static let sharedInstance: AnalyticsController = AnalyticsController()
     private init() {
+        
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType:identityPoolRegion,
+                                                                identityPoolId: identityPoolD)
+        
+        
+        let serviceConfiguration = AWSServiceConfiguration(region: identityPoolRegion,
+                                                credentialsProvider:credentialsProvider)
+
         let analyticsConfiguration = AWSMobileAnalyticsConfiguration()
+        analyticsConfiguration.serviceConfiguration = serviceConfiguration!
+        
         analytics = AWSMobileAnalytics(forAppId: appID, configuration: analyticsConfiguration)
     }
     

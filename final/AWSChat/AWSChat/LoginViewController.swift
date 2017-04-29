@@ -36,6 +36,11 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().shouldFetchBasicProfile = true
         GIDSignIn.sharedInstance().signOut()
+        
+        // send an analytics event
+        let analyticsController = AnalyticsController.sharedInstance
+        analyticsController.postCustomEvent(eventType: "Screen Loaded", eventAttributes: ["name" : "Login"])
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +49,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func onLogin(_ sender: Any) {
+        
+        // send an analytics event
+        let analyticsController = AnalyticsController.sharedInstance
+        analyticsController.postCustomEvent(eventType: "Button tapped", eventAttributes: ["action" : "Login"])
         
         dismissKeyboard()
         
@@ -105,6 +114,16 @@ extension LoginViewController {
     
     fileprivate func displayLoginError(error:NSError) {
         
+        // send an analytics event
+        if let errorType = error.userInfo["__type"] as? String,
+            let errorMessage = error.userInfo["message"] as?  String {
+            
+            let analyticsController = AnalyticsController.sharedInstance
+            analyticsController.postCustomEvent(eventType: "Login Error",
+                                    eventAttributes: ["type" : errorType,
+                                                      "message" : errorMessage])
+        }
+        
         let alertController = UIAlertController(title: error.userInfo["__type"] as? String,
                                                 message: error.userInfo["message"] as? String,
                                                 preferredStyle: .alert)
@@ -118,6 +137,12 @@ extension LoginViewController {
     }
     
     fileprivate func displaySuccessMessage() {
+        
+        // send an analytics event
+        let analyticsController = AnalyticsController.sharedInstance
+        analyticsController.postCustomEvent(eventType: "Login Success",
+                                            eventAttributes: nil)
+        
         let alertController = UIAlertController(title: "Success.",
                                                 message: "Login succesful!",
                                                 preferredStyle: .alert)
