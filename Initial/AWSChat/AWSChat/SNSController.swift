@@ -11,7 +11,8 @@ import AWSSNS
 
 class SNSController {
     
-    private let platformApplicationARN = "arn:aws:sns:us-east-1:700128248927:app/APNS_SANDBOX/AWSChat_iOS"
+    //TO DO: Insert your SNS platform application ARN here
+    private let platformApplicationARN = "your platform application ARN"
     var apnsDeviceToken:String?
     
     static let sharedInstance: SNSController = SNSController()

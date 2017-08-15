@@ -12,10 +12,12 @@ import AWSMobileAnalytics
 
 class AnalyticsController {
     
+    //TO DO: Insert settings for the dedicated identity pool used by Mobile Analytics here.
     private let identityPoolRegion: AWSRegionType = .USEast1
-
-    private let identityPoolD = "us-east-1:74034201-e8f6-454e-a7e0-52b428bff06b"
-    private let appID = "994e34638d084c04860b5976da50b5c4"
+    private let identityPoolD = "insert your mobile analytics identity pool id"
+    
+    //TO DO: Insert your Mobile Analytics application details here.
+    private let appID = "insert your mobile analytics app id"
     private var analytics: AWSMobileAnalytics?
     
     static let sharedInstance: AnalyticsController = AnalyticsController()
